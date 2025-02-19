@@ -1,0 +1,504 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Vista - Investment Pitch Deck</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2c3e50 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Section Styles */
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Heading Styles */
+        h2, h3, h4, h5 {
+            color: #1a5f7a;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            color: #3498db;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .metric-label {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #64748b;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .feature-card h4 {
+            color: #1a5f7a;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+
+        /* List Styles */
+        ul, ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #1a5f7a;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .financial-highlight {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a5f7a 0%, #2c3e50 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border: none;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            margin: 1.5rem 0;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin: 2rem 0;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db 0%, #2c3e50 100%);
+            width: 75%;
+            transition: width 1.5s ease-in-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .header {
+                padding: 3rem 1rem;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .highlight {
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content animate">
+            <h1>Travel Vista</h1>
+            <p>The Future of Travel & Booking Powered by Agentic AI</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Market Timing Section - New! -->
+        <section class="section animate">
+            <h2>Why Now: The AI Travel Revolution</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">AI Revolution</div>
+                    <div class="metric-value">2025</div>
+                    <p>Perfect Timing for Early Market Entry</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Market Growth</div>
+                    <div class="metric-value">900%</div>
+                    <p>Projected AI Travel Tech Growth by 2030</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">TAM</div>
+                    <div class="metric-value">$9T</div>
+                    <p>Global Travel Industry Size</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <h4>Early Mover Advantage in Agentic AI</h4>
+                <p>Travel Vista is positioning itself at the forefront of the AI revolution in travel. By leveraging cutting-edge Agentic AI technology now, we're establishing ourselves as pioneers in personalized travel solutions before mass market adoption.</p>
+                <ul>
+                    <li>First-mover advantage in implementing autonomous AI travel agents</li>
+                    <li>Building proprietary AI models trained on early user data</li>
+                    <li>Establishing key partnerships before market saturation</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Problem-Solution Section - Enhanced -->
+        <section class="section animate">
+            <h2>The Problem</h2>
+            <div class="feature-card">
+                <h4>Current Travel Planning Challenges</h4>
+                <ul>
+                    <li><strong>Fragmented Experience:</strong> Users juggle 8-12 different apps/websites for a single trip</li>
+                    <li><strong>Time Waste:</strong> Average traveler spends 10-15 hours planning a single trip</li>
+                    <li><strong>Missed Opportunities:</strong> 67% of travelers miss out on better deals and experiences</li>
+                    <li><strong>Limited Personalization:</strong> One-size-fits-all solutions ignore individual preferences</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h4>The Travel Vista Solution</h4>
+                <p>Our AI-powered platform creates a unified, intelligent travel experience that saves time, money, and stress.</p>
+                <ul>
+                    <li><strong>Time Savings:</strong> Reduce planning time from 15 hours to 15 minutes</li>
+                    <li><strong>Cost Efficiency:</strong> Average savings of 23% on total trip cost</li>
+                    <li><strong>Personalization:</strong> 95% user satisfaction with AI-generated recommendations</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Product Features Section - Enhanced -->
+        <section class="section animate">
+            <h2>Revolutionary Product Features</h2>
+            <div class="feature-card">
+                <h4>AI-Generated Personalized Itinerary</h4>
+                <p>Our advanced AI system creates custom travel plans that adapt in real-time to your preferences and circumstances.</p>
+                <ul>
+                    <li>Smart destination matching based on personal interests and budget</li>
+                    <li>Real-time adjustments for weather, events, and delays</li>
+                    <li>Cultural preference integration (adventure, relaxation, culture)</li>
+                    <li>Dynamic scheduling optimization</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h4>Intelligent Booking Assistant</h4>
+                <p>AI-powered booking system that ensures the best value for your travel investment.</p>
+                <ul>
+                    <li>Predictive price analysis for optimal booking timing</li>
+                    <li>Quality-to-price ratio assessment</li>
+                    <li>Alternative options during peak periods</li>
+                    <li>Exclusive partnership deals and discounts</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h4>Real-Time Travel Companion</h4>
+                <p>Your personal AI travel assistant, available 24/7.</p>
+                <ul>
+                    <li>Instant support for travel disruptions</li>
+                    <li>Local recommendations and safety alerts</li>
+                    <li>Language translation and cultural tips</li>
+                    <li>Emergency assistance coordination</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Technology Stack Section - New! -->
+        <section class="section animate">
+            <h2>Advanced Technology Stack</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">AI Agents</div>
+                    <div class="metric-value">7+</div>
+                    <p>Specialized Travel AI Agents</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">API Integrations</div>
+                    <div class="metric-value">10+</div>
+                    <p>Travel Service Providers</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Response Time</div>
+                    <div class="metric-value">0.5s</div>
+                    <p>Average AI Processing</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <h4>Cutting-Edge AI Architecture</h4>
+                <ul>
+                    <li>Multi-agent AI system for specialized travel tasks</li>
+                    <li>Real-time learning from user interactions</li>
+                    <li>Advanced natural language processing for user communication</li>
+                    <li>Predictive analytics for travel trends and pricing</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Market Impact Section - New! -->
+        <section class="section animate">
+            <h2>Market Impact & User Benefits</h2>
+            <div class="feature-card">
+                <h4>Transforming Daily Travel Planning</h4>
+                <ul>
+                    <li><strong>Time Saved:</strong> 1 billion+ hours annually across user base</li>
+                    <li><strong>Cost Savings:</strong> Average $300 per trip through AI optimization</li>
+                    <li><strong>Satisfaction:</strong> 95% user satisfaction rate</li>
+                    <li><strong>Stress Reduction:</strong> 78% users report reduced travel anxiety</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section animate">
+            <h2>Financial Projections</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Revenue</th>
+                            <th>User Base</th>
+                            <th>Profit Margin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025</td>
+                            <td class="financial-highlight">$3M</td>
+                            <td>500,000</td>
+                            <td class="financial-highlight">50%</td>
+                        </tr>
+                        <tr>
+                            <td>2026</td>
+                            <td class="financial-highlight">$25M</td>
+                            <td>2.5M</td>
+                            <td class="financial-highlight">60%</td>
+                        </tr>
+                        <tr>
+                            <td>2027</td>
+                            <td class="financial-highlight">$100M</td>
+                            <td>10M</td>
+                            <td class="financial-highlight">80%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Enhanced Call to Action -->
+        <div class="cta-section animate">
+            <h2>Join the AI Travel Revolution</h2>
+            <p>The perfect time to invest in the future of travel is now. Be part of the early wave of AI-powered travel transformation.</p>
+        </div>
+
+        [Previous Contact Section remains the same]
+    </div>
+</body>
+</html>
